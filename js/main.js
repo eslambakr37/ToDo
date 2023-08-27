@@ -372,7 +372,7 @@ async function deleteAllCompleted() {
 /* ------------------------------------------------- */
 async function initialization() {
     await getTasks();
-    displayTasks();
     filterTasks();
+    displayTasks();
 };
 initialization();
