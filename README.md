@@ -39,9 +39,11 @@ Users should be able to:
 ![](./screenshots/screenshot%204.jpeg) this screenshot shows the appearance of the webpage in dark mode also the completed tasks according to selecting "Completed" from the filter list.
 
 ![](./screenshots/screenshot%205.jpeg) 
+
 this screenshot shows the view of the webpage on medium and small screens below 768px.
 
 ![](./screenshots/screenshot%206.jpeg) 
+
 this screenshot shows the dark mode appearance of the webpage on medium and small screens below 768px.
 
 
