@@ -22,21 +22,65 @@
 }
 
 body {
-    /* font-family: 'Josefin Sans', sans-serif; */
     font-size: 18px;
     background-color: var(--body-color);
+}
+
+ul {
+    list-style: none;
 }
 
 .attribution {
     font-size: 11px;
     text-align: center;
-    margin: 20px;
+    /* margin: 20px; */
+    margin-top: 40px;
     color: var(--dark-grayish-blue);
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+/* Start Components */
+.tasks-container-styling {
+    background-color: var(--main-color);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    border: 1px solid var(--light-grayish-blue);
+    margin: 20px;
+    cursor: pointer;
+}
+
+.active-text {
+    color: var(--bright-Blue);
+}
+
+.task-done-circle {
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    border: none !important;
+}
+
+.task-done-text {
+    color: var(--light-grayish-blue) !important;
+    text-decoration: line-through;
+    font-weight: normal !important;
+}
+
+/* End Components */
+
+/* Background Image Sec */
 
 .header-img {
     width: 100%;
@@ -48,11 +92,20 @@ body {
     transition: var(--main-transition);
 }
 
+@media screen and (max-width: 767px) {
+    .header-img {
+        background-image: url(../images/bg-mobile-light.jpg);
+    }
+}
+
+/* End Background Image Sec */
+
 .content {
     position: absolute;
     top: 8%;
 }
 
+/* Start Header */
 .header {
     padding-bottom: 30px;
 }
@@ -74,26 +127,6 @@ body {
     position: relative;
     top: 0;
     transition: var(--main-transition);
-}
-
-.tasks-container-styling {
-    background-color: var(--main-color);
-    width: 100%;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-    height: 25px;
-    background-color: var(--main-color);
-    border-radius: 50%;
-    border: 1px solid var(--light-grayish-blue);
-    margin: 20px;
-    cursor: pointer;
 }
 
 .new-circle {
@@ -128,16 +161,12 @@ body {
     opacity: 0;
 }
 
+/* End Header */
 
+/* Start Tasks Sec */
 .tasks-container {
     margin-top: 20px;
-    /* box-shadow: 0px 10px 20px 0 hsla(235, 19%, 35%, 0.1); */
-    /* box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-}
-
-ul {
-    list-style: none;
 }
 
 .tasks-list {
@@ -155,6 +184,20 @@ ul {
     color: var(--very-dark-grayish-blue);
 }
 
+.cross {
+    opacity: 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .cross {
+        opacity: 1 !important;
+    }
+}
+
+.task:hover .cross {
+    opacity: 1;
+}
 
 .list-footer {
     font-size: 14px;
@@ -169,34 +212,8 @@ ul {
     color: var(--dark-grayish-blue);
 }
 
-
-.active-text {
-    color: var(--bright-Blue);
-}
-
-.content small {
-    font-size: 14px;
-    color: var(--dark-grayish-blue);
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.task-done-circle {
-    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-    border: none !important;
-}
-
-.task-done-text {
-    color: var(--light-grayish-blue) !important;
-    text-decoration: line-through;
-    font-weight: normal !important;
-}
-
 .small-screen-ul {
     margin-top: 20px;
-    /* border: 1px solid var(--light-grayish-blue); */
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 
 }
@@ -211,30 +228,6 @@ ul {
     font-size: 14px;
 }
 
-@media screen and (max-width: 767px) {
-    .header-img {
-        background-image: url(../images/bg-mobile-light.jpg);
-    }
-
-    .cross {
-        opacity: 1 !important;
-    }
-}
-
-
-.task.dragging :where(.task-content) {
-    opacity: 0;
-}
-
-.cross {
-    opacity: 0;
-    cursor: pointer;
-}
-
-.task:hover .cross {
-    opacity: 1;
-}
-
 .filter-list li:hover:not(.active-text),
 .list-cleaner:hover {
     color: var(--hover-color);
@@ -242,4 +235,21 @@ ul {
 
 .list-cleaner {
     cursor: pointer;
+}
+
+/* End Tasks Sec */
+
+
+
+/* Drag and drop option */
+.content small {
+    font-size: 14px;
+    color: var(--dark-grayish-blue);
+    text-align: center;
+    margin-top: 40px;
+    display: block;
+}
+
+.task.dragging :where(.task-content) {
+    opacity: 0;
 }
