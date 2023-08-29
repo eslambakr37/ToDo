@@ -105,12 +105,6 @@ body {
     margin: 20px;
 }
 
-/* .circle:hover {
-
-    border: 5px solid;
-    border-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-} */
-
 .new-task input {
     border: none;
     background-color: var(--main-color);
